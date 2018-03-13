@@ -3,34 +3,15 @@
     <section class="intro">
       <h1>Get the latest tech news</h1>
     </section>
-    <section class="featured-posts">  
-      <post-preview
-        id="1"
-        thumbnail="https://www.visioncritical.com/wp-content/uploads/2015/12/tech-companies-resources-950x700.jpg"
-        title="Hello There"
-        previewText="This is my first post!"
-      />
-      <post-preview
-        id="2"
-        thumbnail="https://www.visioncritical.com/wp-content/uploads/2015/12/tech-companies-resources-950x700.jpg"
-        title="Hello There"
-        previewText="This is my second post!"
-      />
-      <post-preview
-        id="3"
-        thumbnail="https://www.visioncritical.com/wp-content/uploads/2015/12/tech-companies-resources-950x700.jpg"
-        title="Hello There"
-        previewText="This is my third post!"
-      />
-    </section>
+    <PostList/>
   </div>
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview'
+import PostList from '@/components/Posts/PostList'
 export default {
   components: {
-    PostPreview,
+    PostList,
   }
 }
 </script>
@@ -43,6 +24,7 @@ export default {
   box-sizing: border-box;
   background-position: center;
   background-size: cover;
+  background-image: url('~assets/images/main-page-background.jpg')
 }
 
 .intro h1 {
