@@ -1,15 +1,14 @@
 <template>
   <div class="admin-post-page">
     <section class="update-form">
-      <AdminPostForm
-        :post="loadedPost"
-      />
+      <AdminPostForm :post="loadedPost" />
     </section>
   </div>
 </template>
 
 <script>
 import AdminPostForm from '@/components/Admin/AdminPostForm'
+
 export default {
   layout: 'admin',
   components: {
@@ -18,10 +17,10 @@ export default {
   data() {
     return {
       loadedPost: {
-        author: 'Vladimir',
-        title: 'My awesome post',
-        content: 'Super amazing something',
-        thumbnailLink: 'https://www.visioncritical.com/wp-content/uploads/2015/12/tech-companies-resources-950x700.jpg'
+        author: 'Maximilian',
+        title: 'My awesome Post',
+        content: 'Super amazing, thanks for that!',
+        thumbnailLink: 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg'
       }
     }
   }
@@ -33,6 +32,7 @@ export default {
   width: 90%;
   margin: 20px auto;
 }
+
 @media (min-width: 768px) {
   .update-form {
     width: 500px;

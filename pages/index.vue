@@ -1,20 +1,47 @@
 <template>
   <div class="home-page">
     <section class="intro">
-      <h1>Get the latest tech news</h1>
+      <h1>Get the latest tech news!</h1>
     </section>
-    <PostList/>
+    <PostList :posts="loadedPosts"/>
   </div>
 </template>
 
 <script>
 import PostList from '@/components/Posts/PostList'
+
 export default {
   components: {
-    PostList,
-  }
-}
+    PostList
+  },
+  asyncData(context, callback) {
+    console.log('async');
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
+          { 
+            id: '1',
+            title: 'First Post',
+            previewText: 'This is our first staghod',
+            thumbnail: 'https://cdn.techinasia.com/wp-content/uploads/2017/06/47724337_l.jpg'
+          },
+          { 
+            id: '2',
+            title: 'Second Post',
+            previewText: 'This is our second staghod',
+            thumbnail: 'http://anthillonline.com/wp-content/uploads/2016/03/keyboard.jpg'
+          }
+        ]
+      })
+    },1500)
+  },
+  created() {
+    
+  },
+
+ }
 </script>
+
 
 <style scoped>
 .intro {
@@ -22,9 +49,9 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
+  background-image: url('~assets/images/main-page-background.jpg');
   background-position: center;
   background-size: cover;
-  background-image: url('~assets/images/main-page-background.jpg')
 }
 
 .intro h1 {
@@ -56,6 +83,4 @@ export default {
   align-items: center;
   justify-content: center;
 }
-
-
 </style>
